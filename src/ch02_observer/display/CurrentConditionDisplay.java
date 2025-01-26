@@ -1,4 +1,8 @@
-package ch02_observer;
+package ch02_observer.display;
+
+import ch02_observer.DisplayElement;
+import ch02_observer.Observer;
+import ch02_observer.WeatherData;
 
 public class CurrentConditionDisplay implements Observer, DisplayElement {
     private float temperature;
@@ -11,9 +15,9 @@ public class CurrentConditionDisplay implements Observer, DisplayElement {
     }
 
     @Override
-    public void update(float temperature, float humidity, float pressure) {
-        this.temperature = temperature;
-        this.humidity = humidity;
+    public void update() {
+        this.temperature = weatherData.getTemperature();
+        this.humidity = weatherData.getHumidity();
         display();
     }
 
