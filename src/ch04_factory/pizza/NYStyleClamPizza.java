@@ -3,13 +3,23 @@ package ch04_factory.pizza;
 import ch04_factory.Pizza;
 
 public class NYStyleClamPizza extends Pizza {
+    @Override
+    public void prepare() {
 
-	public NYStyleClamPizza() {
-		name = "NY Style Clam Pizza";
-		dough = "Thin Crust Dough";
-		sauce = "Marinara Sauce";
- 
-		toppings.add("Grated Reggiano Cheese");
-		toppings.add("Fresh Clams from Long Island Sound");
-	}
+    }
+
+    @Override
+    public void bake() {
+
+    }
+
+    @Override
+    public void cut() {
+
+    }
+
+    @Override
+    public void box() {
+
+    }
 }

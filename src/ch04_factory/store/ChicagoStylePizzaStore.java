@@ -1,20 +1,14 @@
 package ch04_factory.store;
 
 import ch04_factory.Pizza;
-import ch04_factory.PizzaStore;
-import ch04_factory.pizza.*;
+import ch04_factory.pizza.ChicagoStyleCheesePizza;
 
 public class ChicagoStylePizzaStore extends PizzaStore {
     @Override
-    public Pizza createPizza(String item) {
-        if (item.equals("cheese")) {
+    public Pizza createPizza(String type) {
+        if (type.equals("cheese")) {
             return new ChicagoStyleCheesePizza();
-        } else if (item.equals("veggie")) {
-            return new ChicagoStyleVeggiePizza();
-        } else if (item.equals("clam")) {
-            return new ChicagoStyleClamPizza();
-        } else if (item.equals("pepperoni")) {
-            return new ChicagoStylePepperoniPizza();
-        } else return null;
+        }
+        else return null;
     }
 }

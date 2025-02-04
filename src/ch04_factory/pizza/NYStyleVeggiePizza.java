@@ -3,16 +3,23 @@ package ch04_factory.pizza;
 import ch04_factory.Pizza;
 
 public class NYStyleVeggiePizza extends Pizza {
+    @Override
+    public void prepare() {
 
-	public NYStyleVeggiePizza() {
-		name = "NY Style Veggie Pizza";
-		dough = "Thin Crust Dough";
-		sauce = "Marinara Sauce";
- 
-		toppings.add("Grated Reggiano Cheese");
-		toppings.add("Garlic");
-		toppings.add("Onion");
-		toppings.add("Mushrooms");
-		toppings.add("Red Pepper");
-	}
+    }
+
+    @Override
+    public void bake() {
+
+    }
+
+    @Override
+    public void cut() {
+
+    }
+
+    @Override
+    public void box() {
+
+    }
 }

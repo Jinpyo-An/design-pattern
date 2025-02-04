@@ -1,8 +1,10 @@
-package ch04_factory;
+package ch04_factory.store;
+
+import ch04_factory.Pizza;
 
 public abstract class PizzaStore {
 
-    final public Pizza orderPizza(String type) {
+    public Pizza orderPizza(String type) {
         Pizza pizza;
 
         pizza = createPizza(type);
@@ -15,5 +17,5 @@ public abstract class PizzaStore {
         return pizza;
     }
 
-    protected abstract Pizza createPizza(String type);
+    abstract protected Pizza createPizza(String type);
 }

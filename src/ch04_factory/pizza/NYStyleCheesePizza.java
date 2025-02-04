@@ -3,16 +3,11 @@ package ch04_factory.pizza;
 import ch04_factory.Pizza;
 
 public class NYStyleCheesePizza extends Pizza {
+    public NYStyleCheesePizza() {
+        name = "뉴욕 스타일 소스와 치즈 피자";
+        dough = "씬 크러스트 도우";
+        sauce = "마리아나 소스";
 
-	public NYStyleCheesePizza() { 
-		name = "NY Style Sauce and Cheese Pizza";
-		dough = "Thin Crust Dough";
-		sauce = "Marinara Sauce";
- 
-		toppings.add("Grated Reggiano Cheese");
-	}
-
-	public void cut() {
-		System.out.println("네모난 모양으로 피자 자르기");
-	}
+        toppings.add("잘게 썬 레지아노 치즈");
+    }
 }

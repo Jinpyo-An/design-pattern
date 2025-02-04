@@ -1,4 +1,8 @@
-package ch04_factory.ingredient;
+package ch04_factory.Ingredient_factory;
+
+import ch04_factory.Ingredient.*;
+import ch04_factory.Ingredient.NY_Ingredient.*;
+import ch04_factory.PizzaIngredientFactory;
 
 public class NYPizzaIngredientFactory implements PizzaIngredientFactory {
     @Override
@@ -18,10 +22,7 @@ public class NYPizzaIngredientFactory implements PizzaIngredientFactory {
 
     @Override
     public Veggies[] createVeggies() {
-        Veggies veggies[] = {
-            new Garlic(), new Onion(), new Mushroom(), new RedPepper()
-        } ;
-        return veggies;
+        return new Veggies[]{new Garlic(), new Onion(), new Mushroom(), new RedPepper()};
     }
 
     @Override
@@ -30,7 +31,7 @@ public class NYPizzaIngredientFactory implements PizzaIngredientFactory {
     }
 
     @Override
-    public Clams createClam() {
+    public Clams createClams() {
         return new FreshClams();
     }
 }

@@ -1,13 +1,12 @@
 package ch04_factory.store;
 
 import ch04_factory.Pizza;
-import ch04_factory.PizzaStore;
 import ch04_factory.pizza.NYStyleCheesePizza;
 import ch04_factory.pizza.NYStyleClamPizza;
 import ch04_factory.pizza.NYStylePepperoniPizza;
 import ch04_factory.pizza.NYStyleVeggiePizza;
 
-public class NYPizzaStore extends PizzaStore {
+public class NYStylePizzaStore extends PizzaStore{
     @Override
     public Pizza createPizza(String item) {
         if (item.equals("cheese")) {
