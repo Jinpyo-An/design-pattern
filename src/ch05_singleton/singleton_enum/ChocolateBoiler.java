@@ -1,22 +1,22 @@
-package ch05_singleton;
+package ch05_singleton.singleton_enum;
 
-public class ChocolateBoiler {
+public enum ChocolateBoiler {
+    CHOCOLATE_BOILER;
 
     private boolean empty;
     private boolean boiled;
-    private static ChocolateBoiler chocolateBoiler;
 
-    private ChocolateBoiler() {
+    ChocolateBoiler() {
         empty = true;
         boiled = false;
     }
 
-    public static synchronized ChocolateBoiler getInstance() {
-        if (chocolateBoiler == null) {
-            chocolateBoiler = new ChocolateBoiler();
-        }
+    public boolean isEmpty() {
+        return empty;
+    }
 
-        return chocolateBoiler;
+    public boolean isBoiled() {
+        return boiled;
     }
 
     public void fill() {
@@ -36,13 +36,5 @@ public class ChocolateBoiler {
         if (!isEmpty() && isBoiled()) {
             empty = true;
         }
-    }
-
-    public boolean isEmpty() {
-        return empty;
-    }
-
-    public boolean isBoiled() {
-        return boiled;
     }
 }

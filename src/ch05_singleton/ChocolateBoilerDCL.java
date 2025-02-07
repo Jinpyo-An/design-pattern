@@ -1,19 +1,23 @@
 package ch05_singleton;
 
-public class ChocolateBoiler {
+public class ChocolateBoilerDCL {
 
     private boolean empty;
     private boolean boiled;
-    private static ChocolateBoiler chocolateBoiler;
+    private volatile static ChocolateBoilerDCL chocolateBoiler;
 
-    private ChocolateBoiler() {
+    private ChocolateBoilerDCL() {
         empty = true;
         boiled = false;
     }
 
-    public static synchronized ChocolateBoiler getInstance() {
+    public static synchronized ChocolateBoilerDCL getInstance() {
         if (chocolateBoiler == null) {
-            chocolateBoiler = new ChocolateBoiler();
+            synchronized (ChocolateBoilerDCL.class) {
+                if (chocolateBoiler == null) {
+                    chocolateBoiler = new ChocolateBoilerDCL();
+                }
+            }
         }
 
         return chocolateBoiler;

@@ -1,21 +1,17 @@
 package ch05_singleton;
 
-public class ChocolateBoiler {
+public class ChocolateBoilerThread {
 
     private boolean empty;
     private boolean boiled;
-    private static ChocolateBoiler chocolateBoiler;
+    private static ChocolateBoilerThread chocolateBoiler = new ChocolateBoilerThread();
 
-    private ChocolateBoiler() {
+    private ChocolateBoilerThread() {
         empty = true;
         boiled = false;
     }
 
-    public static synchronized ChocolateBoiler getInstance() {
-        if (chocolateBoiler == null) {
-            chocolateBoiler = new ChocolateBoiler();
-        }
-
+    public static ChocolateBoilerThread getInstance() {
         return chocolateBoiler;
     }
 
